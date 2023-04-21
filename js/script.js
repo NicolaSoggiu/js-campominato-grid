@@ -1,17 +1,15 @@
-// CONNECT GRID HTML WITH THE CONST IN JS
+// CONNECT HTML WITH THE CONST IN JS
 const eleGrid = document.querySelector(".grid");
+const btnPlay = document.querySelector(".btn");
 
-// for (i = 0; i < 100; i++) {
-//   eleGrid.innerHTML += '<div class="cell"></div>';
-// }
+createGrid(100, eleGrid);
 
-createGrid(100);
-
-// FUNCTION
-
-// CREATE A GRID FUNCTION
-function createGrid(numCells) {
-  for (let i = 0; i < numCells; i++) {
-    eleGrid.innerHTML += `<div class="cell "></div>`;
+// FUNCTINO TO CREATE THE GRID WITHE THE NUMBER IN ORDER
+function createGrid(numCells, orderCells) {
+  for (let i = 1; i <= numCells; i++) {
+    orderCells.innerHTML += `<div class="cell"> ${i} </div>`;
   }
+  orderCells.addEventListener("click", function () {
+    this.classList.toggle("active");
+  });
 }
