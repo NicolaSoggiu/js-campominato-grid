@@ -26,6 +26,11 @@ body {
     height: 400px;
 }
 
+.container-grid .grid .instructions {
+    padding-top: 8rem;
+    font-size: 3rem;
+}
+
 .cell {
     display: flex;
     justify-content: center;
