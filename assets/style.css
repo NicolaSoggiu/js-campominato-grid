@@ -29,6 +29,7 @@ body {
 .container-grid .grid .instructions {
     padding-top: 8rem;
     font-size: 3rem;
+    text-align: center;
 }
 
 .cell {
