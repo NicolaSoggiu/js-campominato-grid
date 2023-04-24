@@ -24,7 +24,6 @@ body {
 .grid {
     width: 400px;
     height: 400px;
-    box-sizing: content-box;
 }
 
 .cell {
@@ -44,18 +43,4 @@ body {
 
 footer {
     height: 10vh;
-}
-
-/* BONUS */
-
-.cell_medium {
-    width: calc( 100% / 9 );
-    height: calc( 100% / 9 );
-    border: 1px solid black;
-}
-
-.cell_hard {
-    width: calc( 100% / 7 );
-    height: calc( 100% / 7 );
-    border: 1px solid black;
 }

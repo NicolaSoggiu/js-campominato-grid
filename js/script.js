@@ -4,29 +4,37 @@ const btn = document.querySelector(".btn");
 const easy = document.querySelector("#easy");
 const medium = document.querySelector("#medium");
 const hard = document.querySelector("#hard");
-// BUTTON TO GENERATE THE GRID
 
+// BUTTON TO GENERATE GRID ACCORDING TO DIFFICULTY
 btn.addEventListener("click", function () {
   const chooseDifficulty = document.querySelector("#btnDifficulty").value;
-  if (chooseDifficulty == "easy") {
+  // EASY
+  if (chooseDifficulty === "easy") {
     createGrid(100, eleGrid);
-  } else if (chooseDifficulty == "medium") {
+    // MEDIUM
+  } else if (chooseDifficulty === "medium") {
     createGrid(81, eleGrid);
-    cell.classList.remove("cell");
-    cell.classList.add("cell_medium");
-  } else if (chooseDifficulty == "hard") {
+    const cell = document.querySelectorAll(".cell");
+    cell.forEach((cell) => {
+      cell.style.width = "calc(100% / 9)";
+      cell.style.height = "calc(100% / 9)";
+    });
+    // HARD
+  } else if (chooseDifficulty === "hard") {
     createGrid(49, eleGrid);
-    cell.classList.remove("cell");
-    cell.classList.add("cell_hard");
+    const cell = document.querySelectorAll(".cell");
+    cell.forEach((cell) => {
+      cell.style.width = "calc(100% / 7)";
+      cell.style.height = "calc(100% / 7)";
+    });
   }
 });
 
-// FUNCTINO TO CREATE THE GRID
-
+// FUNCTION TO CREATE THE GRID AND COLOR WITH THE CLICK
 function createGrid(numCells, eleContainer) {
   eleContainer.innerHTML = "";
   for (let i = 1; i <= numCells; i++) {
-    const cell = document.createElement("div");
+    let cell = document.createElement("div");
     cell.classList.add("cell");
     cell.innerHTML = [i];
     eleContainer.append(cell);
